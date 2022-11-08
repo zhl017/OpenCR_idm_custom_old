@@ -15,7 +15,7 @@ $ sudo apt-get install libc6:armhf
 ```
 $ export OPENCR_PORT=/dev/ttyACM0
 $ export OPENCR_MODEL=mecanum_noetic
-$ rm -rf ./opencr_update.tar.bz2
+$ rm -rf ./opencr_update_idm_custom.tar.bz2
 ```
 4. Download the firmware and loader, then extract the file.
 ```
