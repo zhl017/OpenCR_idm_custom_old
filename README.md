@@ -19,7 +19,7 @@ $ rm -rf ./opencr_update_idm_custom.tar.bz2
 ```
 4. Download the firmware and loader, then extract the file.
 ```
-$ wget https://github.com/zhl017/OpenCR_idm_custom/raw/main/binaries/22.11.08/opencr_update_idm_custom.tar.bz2
+$ wget https://github.com/zhl017/OpenCR_idm_custom/raw/main/binaries/lastest/opencr_update_idm_custom.tar.bz2
 $ tar -xvf opencr_update_idm_custom.tar.bz2
 ```
 5. Upload firmware to the OpenCR.
