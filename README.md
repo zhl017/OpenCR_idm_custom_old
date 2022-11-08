@@ -14,7 +14,7 @@ $ sudo apt-get install libc6:armhf
 3. Depending on the platform, use meanum_noetic for the OPENCR_MODEL name.
 ```
 $ export OPENCR_PORT=/dev/ttyACM0
-$ export OPENCR_MODEL=pizza_noetic
+$ export OPENCR_MODEL=mecanum_noetic
 $ rm -rf ./opencr_update.tar.bz2
 ```
 4. Download the firmware and loader, then extract the file.
