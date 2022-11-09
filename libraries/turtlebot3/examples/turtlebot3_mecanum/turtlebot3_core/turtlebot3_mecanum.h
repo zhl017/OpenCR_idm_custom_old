@@ -22,10 +22,9 @@
 #define NAME                             "Mecanum"
 
 #define WHEEL_RADIUS                     0.05            // meter (BURGER / WAFFLE : 0.033, MECANUM : 0.05)
-#define WHEEL_SEPARATION_X               0.287           // meter (BURGER : 0.160, WAFFLE : 0.287)
-#define WHEEL_SEPARATION_Y               0.287           // meter (BURGER : 0.160, WAFFLE : 0.287)
-#define TURNING_RADIUS                   0.260           // meter (BURGER : 0.080, WAFFLE : 0.1435, MECANUM : 0.260)
-#define ROBOT_RADIUS                     0.220           // meter (BURGER : 0.105, WAFFLE : 0.220, MECANUM : 0.220)
+#define WHEEL_SEPARATION_X               0.096           // meter (BURGER : 0.160, WAFFLE : 0.287, MECANUM : 0.192 / 2)
+#define WHEEL_SEPARATION_Y               0.171           // meter (BURGER : 0.160, WAFFLE : 0.287, MECANUM : 0.342 / 2)
+#define TURNING_RADIUS                   0.1961           // meter (BURGER : 0.080, WAFFLE : 0.1435, MECANUM : 0.1961)
 #define ROBOT_RPM                        77              // rpm   (BURGER : 61, WAFFLE : 77, MECANUM(XM430-W350) : 46, MECANUM(XM430-W210) : 77)
 
 #define ENCODER_MIN                      -2147483648     // raw
