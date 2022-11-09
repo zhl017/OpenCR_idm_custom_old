@@ -27,7 +27,7 @@ Turtlebot3MecanumMotorDriver::Turtlebot3MecanumMotorDriver()
   rear_right_wheel_id_(DXL_REAR_RIGHT_ID)
 {
   torque_ = false;
-  dynamixel_limit_max_velocity_ = XM430_W350_T_MAX_VELOCITY;
+  dynamixel_limit_max_velocity_ = WAFFLE_DXL_LIMIT_MAX_VELOCITY;
 }
 
 Turtlebot3MecanumMotorDriver::~Turtlebot3MecanumMotorDriver()
