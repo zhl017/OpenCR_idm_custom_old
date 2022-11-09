@@ -18,7 +18,7 @@
 
 #ifndef TURTLEBOT3_CORE_CONFIG_H_
 #define TURTLEBOT3_CORE_CONFIG_H_
-// #define NOETIC_SUPPORT          //uncomment this if writing code for ROS1 Noetic
+#define NOETIC_SUPPORT          //uncomment this if writing code for ROS1 Noetic
 
 #include <ros.h>
 #include <ros/time.h>
