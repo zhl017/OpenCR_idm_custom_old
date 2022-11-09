@@ -266,13 +266,13 @@ bool Turtlebot3MecanumMotorDriver::controlMotor(const float wheel_radius, const 
   float wheel_velocity_cmd[4];
 
   float lin_vel_x = value[LINEAR_X];
-  float lin_vel_y = -value[LINEAR_Y];
+  float lin_vel_y = value[LINEAR_Y];
   float ang_vel = value[ANGULAR];
 
-  wheel_velocity_cmd[LEFT]  = lin_vel_x + lin_vel_y - (wheel_separation_x + wheel_separation_y) * ang_vel;
-  wheel_velocity_cmd[RIGHT]  = lin_vel_x - lin_vel_y + (wheel_separation_x + wheel_separation_y) * ang_vel;
-  wheel_velocity_cmd[REAR_LEFT]  = lin_vel_x - lin_vel_y - (wheel_separation_x + wheel_separation_y) * ang_vel;
-  wheel_velocity_cmd[REAR_RIGHT]  = lin_vel_x + lin_vel_y + (wheel_separation_x + wheel_separation_y) * ang_vel;
+  wheel_velocity_cmd[LEFT]  = lin_vel_x - lin_vel_y - (wheel_separation_x + wheel_separation_y) * ang_vel;
+  wheel_velocity_cmd[RIGHT]  = lin_vel_x + lin_vel_y + (wheel_separation_x + wheel_separation_y) * ang_vel;
+  wheel_velocity_cmd[REAR_LEFT]  = lin_vel_x + lin_vel_y - (wheel_separation_x + wheel_separation_y) * ang_vel;
+  wheel_velocity_cmd[REAR_RIGHT]  = lin_vel_x - lin_vel_y + (wheel_separation_x + wheel_separation_y) * ang_vel;
 
   wheel_velocity_cmd[LEFT]  = constrain(wheel_velocity_cmd[LEFT]  * VELOCITY_CONSTANT_VALUE / wheel_radius, -dynamixel_limit_max_velocity_, dynamixel_limit_max_velocity_);
   wheel_velocity_cmd[RIGHT] = constrain(wheel_velocity_cmd[RIGHT] * VELOCITY_CONSTANT_VALUE / wheel_radius, -dynamixel_limit_max_velocity_, dynamixel_limit_max_velocity_);
