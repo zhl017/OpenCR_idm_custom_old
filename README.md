@@ -5,8 +5,7 @@
 
 ## OpenCR Setup
 
-<details>
-<summary> Binary Install [comming soon]</summary>
+<details> <summary> Binary Install [comming soon]</summary>
 1. Connect the [OpenCR] to the Rasbperry Pi using the micro USB cable.
 
 2. Install required packages on the Raspberry Pi to upload the [OpenCR] firmware.
@@ -45,8 +44,7 @@ $ ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
   - Release the `PUSH SW2` button.
 </details>
 
-<details>
-<summary>Upload using **Arduino IDE**</summary>
+<details><summary>Upload using **Arduino IDE**</summary>
 
 Please be aware that [OpenCR] board manager **does not support Arduino IDE on ARM based SBC such as Raspberry Pi or NVidia Jetson**.  
 In order to upload the [OpenCR] firmware using Arduino IDE, please follow the below instructions on your PC.
