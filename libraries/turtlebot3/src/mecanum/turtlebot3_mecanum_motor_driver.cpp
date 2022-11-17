@@ -200,7 +200,7 @@ bool Turtlebot3MecanumMotorDriver::readEncoder(int32_t &left_value, int32_t &rig
   return true;
 }
 
-bool Turtlebot3MecanumMotorDriver::writeVelocity(int64_t left_value, int64_t right_value, int32_t rear_left_value, int32_t rear_right_value)
+bool Turtlebot3MecanumMotorDriver::writeVelocity(int64_t left_value, int64_t right_value, int64_t rear_left_value, int64_t rear_right_value)
 {
   bool dxl_addparam_result;
   int8_t dxl_comm_result;
