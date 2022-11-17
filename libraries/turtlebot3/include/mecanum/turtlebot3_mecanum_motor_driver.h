@@ -82,7 +82,7 @@ class Turtlebot3MecanumMotorDriver
   bool setTorque(bool onoff);
   bool getTorque();
   bool readEncoder(int32_t &left_value, int32_t &right_value, int32_t &rear_left_value, int32_t &rear_right_value);
-  bool writeVelocity(int64_t left_value, int64_t right_value, int32_t rear_left_value, int32_t rear_right_value);
+  bool writeVelocity(int64_t left_value, int64_t right_value, int64_t rear_left_value, int64_t rear_right_value);
   bool controlMotor(const float wheel_radius, const float wheel_separation_x, const float wheel_separation_y, float* value);
 
  private:
