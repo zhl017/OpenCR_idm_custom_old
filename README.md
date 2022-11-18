@@ -1,5 +1,6 @@
 # OpenCR_idminer_custom
 
+- 2022/11/18 - modify function
 - 2022/11/08 - mecanum opencr code
 
 
