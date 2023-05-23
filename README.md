@@ -6,7 +6,7 @@
 
 ## OpenCR Setup
 
-<details> <summary> Binary Install [comming soon]</summary>
+<!-- <details> <summary> Binary Install [comming soon]</summary>
 1. Connect the [OpenCR] to the Rasbperry Pi using the micro USB cable.
 
 2. Install required packages on the Raspberry Pi to upload the [OpenCR] firmware.
@@ -43,7 +43,7 @@ $ ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
   - Press the `Reset` button.
   - Release the `Reset` button.
   - Release the `PUSH SW2` button.
-</details>
+</details> -->
 
 <details><summary>Upload using **Arduino IDE**</summary>
 
