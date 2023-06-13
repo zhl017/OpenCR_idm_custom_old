@@ -20,7 +20,7 @@
 
 Turtlebot3MecanumController::Turtlebot3MecanumController()
 {
-  const_cmd_vel_ = CONST_VEL;
+  // const_cmd_vel_ = CONST_VEL;
 }
 
 Turtlebot3MecanumController::~Turtlebot3MecanumController()
@@ -58,50 +58,80 @@ bool Turtlebot3MecanumController::getRCdata(float *get_cmd_vel, uint16_t &raw_da
     if (&raw_data != &Internal::dummy_raw_data_)
       raw_data = received_data;
 
-    if (received_data & RC100_BTN_U)
+    if (received_data == RC100_BTN_U)
     {
-      lin_x += VELOCITY_LINEAR_X * scale_lin_vel_;
+      lin_x = max_lin_vel_ / 2;
       lin_y = 0.0;
+      ang_z = 0.0;
       clicked_state = true;
     }
-    else if (received_data & RC100_BTN_D)
+    else if (received_data == RC100_BTN_D)
     {
-      lin_x -= VELOCITY_LINEAR_X * scale_lin_vel_;
+      lin_x = min_lin_vel_ / 2;
       lin_y = 0.0;
+      ang_z = 0.0;
       clicked_state = true;
     }
-    else if (received_data & RC100_BTN_L)
-    {
-      ang_z += VELOCITY_ANGULAR_Z * scale_ang_vel_;
-      clicked_state = true;
-    }
-    else if (received_data & RC100_BTN_R)
-    {
-      ang_z -= VELOCITY_ANGULAR_Z * scale_ang_vel_;
-      clicked_state = true;
-    }
-    else if (received_data & RC100_BTN_2)
+    else if (received_data == RC100_BTN_L)
     {
       lin_x = 0.0;
-      lin_y += VELOCITY_LINEAR_X * scale_lin_vel_;
+      lin_y = max_lin_vel_ / 2;
       ang_z = 0.0;
       clicked_state = true;
     }
-    else if (received_data & RC100_BTN_4)
+    else if (received_data == RC100_BTN_R)
     {
       lin_x = 0.0;
-      lin_y -= VELOCITY_LINEAR_X * scale_lin_vel_;
+      lin_y = min_lin_vel_ / 2;
       ang_z = 0.0;
       clicked_state = true;
     }
-    else if (received_data & RC100_BTN_6)
+    else if (received_data == RC100_BTN_2)
     {
-      lin_x = const_cmd_vel_;
-      lin_y = const_cmd_vel_;
+      lin_x = 0.0;
+      lin_y = 0.0;
+      ang_z = max_ang_vel_;
+      clicked_state = true;
+    }
+    else if (received_data == RC100_BTN_4)
+    {
+      lin_x = 0.0;
+      lin_y = 0.0;
+      ang_z = min_ang_vel_;
+      clicked_state = true;
+    }
+    else if (received_data == (RC100_BTN_U + RC100_BTN_L))
+    {
+      lin_x = max_lin_vel_ / 2;
+      lin_y = max_lin_vel_ / 2;
+      clicked_state = true;
+    }
+    else if (received_data == (RC100_BTN_U + RC100_BTN_R))
+    {
+      lin_x = max_lin_vel_ / 2;
+      lin_y = min_lin_vel_ / 2;
+      clicked_state = true;
+    }
+    else if (received_data == (RC100_BTN_D + RC100_BTN_L))
+    {
+      lin_x = min_lin_vel_ / 2;
+      lin_y = max_lin_vel_ / 2;
+      clicked_state = true;
+    }
+    else if (received_data == (RC100_BTN_D + RC100_BTN_R))
+    {
+      lin_x = min_lin_vel_ / 2;
+      lin_y = min_lin_vel_ / 2;
+      clicked_state = true;
+    }
+    else if (received_data == RC100_BTN_6)
+    {
+      lin_x = max_lin_vel_;
+      lin_y = 0.0;
       ang_z = 0.0;
       clicked_state = true;
     }
-    else if (received_data & RC100_BTN_5)
+    else if (received_data == RC100_BTN_5)
     {
       lin_x = 0.0;
       lin_y = 0.0;
@@ -115,13 +145,14 @@ bool Turtlebot3MecanumController::getRCdata(float *get_cmd_vel, uint16_t &raw_da
       ang_z = ang_z;
     }
 
-    lin_x = constrain(lin_x, min_lin_vel_, max_lin_vel_);
-    lin_y = constrain(lin_y, min_lin_vel_, max_lin_vel_);
-    ang_z = constrain(ang_z, min_ang_vel_, max_ang_vel_);
+    // lin_x = constrain(lin_x, min_lin_vel_, max_lin_vel_);
+    // lin_y = constrain(lin_y, min_lin_vel_, max_lin_vel_);
+    // ang_z = constrain(ang_z, min_ang_vel_, max_ang_vel_);
 
     get_cmd_vel[0] = lin_x;
     get_cmd_vel[1] = lin_y;
     get_cmd_vel[2] = ang_z;
+
   }
 
   return clicked_state;

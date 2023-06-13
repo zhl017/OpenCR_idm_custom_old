@@ -30,7 +30,10 @@
 #define ADDR_X_PRESENT_VELOCITY         128
 #define ADDR_X_PRESENT_POSITION         132
 
-// Limit values (XM430-W210-T and XM430-W210-T)
+// Limit values
+// Burger : XL430-W250-T RPM : 61 Address(44) Velocity Limit : 265
+// Waffle : XM430-W210-T RPM : 77 Address(44) Velocity Limit : 330
+// Custom : XM430-W350-T RPM : 46 Address(44) Velocity Limit : 200
 #define BURGER_DXL_LIMIT_MAX_VELOCITY            265     // MAX RPM is 61 when XL is powered 12.0V
 #define WAFFLE_DXL_LIMIT_MAX_VELOCITY            330     // MAX RPM is 77 when XM is powered 12.0V
 #define XM430_W350_T_MAX_VELOCITY                200     // MAX RPM is 46 when XM is powered 12.0V
