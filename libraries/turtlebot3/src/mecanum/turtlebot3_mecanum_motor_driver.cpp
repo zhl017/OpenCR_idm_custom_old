@@ -61,12 +61,12 @@ bool Turtlebot3MecanumMotorDriver::init(String turtlebot3)
   groupSyncWriteVelocity_ = new dynamixel::GroupSyncWrite(portHandler_, packetHandler_, ADDR_X_GOAL_VELOCITY, LEN_X_GOAL_VELOCITY);
   groupSyncReadEncoder_   = new dynamixel::GroupSyncRead(portHandler_, packetHandler_, ADDR_X_PRESENT_POSITION, LEN_X_PRESENT_POSITION);
   
-//   if (turtlebot3 == "Burger")
-//     dynamixel_limit_max_velocity_ = BURGER_DXL_LIMIT_MAX_VELOCITY;
-//   else if (turtlebot3 == "Waffle or Waffle Pi")
-//     dynamixel_limit_max_velocity_ = WAFFLE_DXL_LIMIT_MAX_VELOCITY;
-//   else
-//     dynamixel_limit_max_velocity_ = BURGER_DXL_LIMIT_MAX_VELOCITY;
+  if (turtlebot3 == "Mecanum W210")
+    dynamixel_limit_max_velocity_ = WAFFLE_DXL_LIMIT_MAX_VELOCITY;
+  else if (turtlebot3 == "Mecanum W350")
+    dynamixel_limit_max_velocity_ = XM430_W350_T_MAX_VELOCITY;
+  else
+    dynamixel_limit_max_velocity_ = WAFFLE_DXL_LIMIT_MAX_VELOCITY;
 
   DEBUG_SERIAL.println("Success to init Motor Driver");
   return true;

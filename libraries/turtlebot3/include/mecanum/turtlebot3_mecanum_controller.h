@@ -23,10 +23,10 @@
 
 #include <geometry_msgs/Twist.h>
 
-#define CONST_VEL 0.4 // MECANUM : 0.40 m/s
+#define CONST_VEL               0.24   // m/s  W210 : 0.4, W350 : 0.24
 
-#define VELOCITY_LINEAR_X                0.01   // m/s
-#define VELOCITY_ANGULAR_Z               0.1    // rad/s
+#define VELOCITY_LINEAR         0.01   // m/s
+#define VELOCITY_ANGULAR        0.1    // rad/s
 
 #define DEBUG_SERIAL SerialBT2
 
