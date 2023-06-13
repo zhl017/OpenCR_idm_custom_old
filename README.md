@@ -2,15 +2,6 @@
 
 - 2022/11/18 - modify function
 - 2022/11/08 - mecanum opencr code
-- 2023/06/13 - update mecanum opencr code
-1. Change model name `Mecanum` to `Mecanum W210` & `Mecanum W350`
-2. Add RC100 controller direction moving map
-```
-U : forward           2 : left turn           U + L : left-front diagonally
-D : backward          4 : right turn          U + R : right-front diagonally
-L : left sideway                              D + L : left-back diagonally
-R : right sideway                             D + R : right-back diagonally
-```
 
 ## OpenCR Setup
 
